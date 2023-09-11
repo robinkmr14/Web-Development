@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation</title>
+
+    <style>
+      body {
+        background: lightblue;
+      }
+      .parentDiv {
+        position: absolute;
+        left: 30%;
+        top: 23%;
+        height: 300px;
+        width: 500px;
+        background-color: #074736ba;
+        border: 5px sould #070a09;
+      }
+      .childDiv {
+        position: relative;
+        top: 16%;
+        left: 20%;
+        height: 200px;
+        width: 300px;
+        border: 2 solid black;
+        background-color: #1dd1a1;
+        border: 10px sould #10ac84;
+        box-shadow: 0 10px 13px -10px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv" id="parentId">
+      <div class="childDiv" id="childId"></div>
+    </div>
+
+    <script>
+      const parentId = document.getElementById("parentId");
+      const childId = document.getElementById("childId");
+
+      const parentCall = () => {
+        alert("parent Div call");
+      };
+
+      const childCall = () => {
+        alert("Child Div call");
+        // event.stopImmediatePropagation(); // stop the event bubbling
+      };
+
+    // Bubbling Phase
+      parentId.addEventListener("click", parentCall);
+      childId.addEventListener("click", childCall);
+
+    // Capturing Phase
+    //   parentId.addEventListener("click", parentCall,true);
+    //   childId.addEventListener("click", childCall, true);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: serif;
+        background: #2a364f;
+      }
+
+      h1 {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .button_container {
+        width: 176px;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding-top: 40px;
+      }
+
+      .button_su {
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        border-radius: 3px;
+        margin-bottom: 30px;
+        box-shadow: 0px 10px 8px -8px rgba(0, 0, 0, 0.6);
+      }
+
+      .button_su_inner {
+        display: inline-block;
+        background: #f8b627;
+        color: #f4f4f4;
+        font-size: 16px;
+        font-weight: normal;
+        width: 200px;
+        height: 70px;
+        text-align: center;
+        padding-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Different Events Types In JavaScript</h1>
+      <div class="button_container">
+        <div class="button_su">
+          <span class="su_button_circle"> </span>
+          <a
+            href="#"
+            class="button_su_inner"
+            onclick="alert('I am awesome, But No one..')"
+          >
+            <span class="button_text_container"> simple Inline alert() </span>
+          </a>
+        </div>
+
+        <div class="button_su">
+          <span class="su_button_circle"></span>
+          <a href="#" class="button_su_inner" onclick="callingFunction()">
+            <span class="button_text_container"> By calling a Function </span>
+          </a>
+        </div>
+
+        <div class="button_su">
+          <span class="su_button_circle">
+          </span>
+          <a href="#" class="button_su_inner">
+            <span class="button_text_container" id="thirdWay">Inline event </span>
+          </a>
+        </div>
+
+        <div class="button_su">
+          <span class="su_button_circle">
+          </span>
+          <a href="#" class="button_su_inner" id="fourtWay">
+            <span class="button_text_container"> Event Listeners </span>
+          </a>
+        </div>
+      </div>
+
+    <script>
+
+      // 2nd way of writing function
+      const callingFunction = () =>{
+        alert("Most common way of writing function");
+
+        // 3nd way of writing function
+        const thirdWay = document.getElementById('thirdWay');
+
+        thirdWay.onclick = function() {
+          alert("Most common way of writing function again");
+        }
+
+         // 4nd way of writing function
+         const fourtWay = document.querySelector('#fourtWay');
+
+         fourtWay.addEventListener('click', () =>{
+                alert("I love this way of writing functions")
+         });
+      }
+    </script>
+  </body>
+</html>

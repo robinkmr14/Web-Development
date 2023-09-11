@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background: #2a364f;
+        font-family: sans-serif;
+      }
+
+      .main-div {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      p {
+        color: whitesmoke;
+        font-size: 30px;
+      }
+
+      button {
+        display: inline-block;
+        background: #f8b627;
+        color: whitesmoke;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 3px;
+        margin-left: 30%;
+        padding: 15px 20px;
+        outline: none;
+        border: none;
+        box-shadow: 0px 10px 8px -8px rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="main-div">
+        <div>
+            <p>Click "Try it". Wait 3 seconds. The page will alert "Hello".</p>
+            <p>Click "Stop" to prevent the first function to execute.</p>
+            <p>(You must click "Stop" before the 2 seconds are up.)</p>
+
+            <button onclick="myVar = setTimeout(myFunction,2000)">Try it</button>
+
+            <button onclick="clearTimeout(myVar)">Stop it</button>
+        </div>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            alert("Hello");
+        }
+    </script>
+  </body>
+</html>

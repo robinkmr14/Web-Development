@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #2a364f;
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+      }
+
+      .content {
+        padding-top: 45px;
+        padding-bottom: 20px;
+      }
+
+      .button_container {
+        width: 176px;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding-top: 40px;
+      }
+
+      .button_su {
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        box-shadow: 0px 10px 8px -8px rgba(0, 0, 0, 0.6);
+      }
+
+      .button_su_inner {
+        display: inline-block;
+        background: #f8b627;
+        color: #f4f4f4;
+        font-size: 16px;
+        width: 200px;
+        height: 70px;
+        text-align: center;
+        padding-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Let's see what is Event Object</h1>
+      <div class="button_container">
+        <div class="button_su">
+          <span class="su_button_circle"> </span>
+          <a href="#" class="button_su_inner" id="fourtWay">
+            <span class="button_text_container"> Event Listeners </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+        const fourtWay = document.getElementById('fourtWay')
+
+        const checkEvent = () =>{
+            alert("hum dekh rhe h event Object");
+            console.log(event);
+            console.log(event.target);
+            console.log(event.type);
+        }
+
+        fourtWay.addEventListener('click', checkEvent);
+    </script>
+  </body>
+</html>

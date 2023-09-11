@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time</title>
+</head>
+<body>
+    
+    <p>Click the button to display a date after changing the hours</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+    <p id="time"></p>
+    <p id="date"></p>
+
+
+     <!--javaScript... -->
+    <script>
+        function myFunction(){
+            var t = new Date();
+            t.setHours(6);
+            document.getElementById("demo").innerHTML = t;
+        }
+
+        var tm = new Date().toLocaleTimeString();
+        document.getElementById("time").innerHTML = tm;
+
+        var dt = new Date().toLocaleDateString();
+        document.getElementById("date").innerHTML = dt;
+    </script>
+</body>
+</html>

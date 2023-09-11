@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background: #2a364f;
+        font-family: sans-serif;
+      }
+
+      .main-div {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      p {
+        color: whitesmoke;
+        font-size: 30px;
+      }
+
+      button {
+        display: inline-block;
+        background: #f8b627;
+        color: whitesmoke;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 3px;
+        margin-left: 30%;
+        padding: 15px 20px;
+        outline: none;
+        border: none;
+        box-shadow: 0px 10px 8px -8px rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <div>
+        <p>Can you stop me when I reach at 5</p>
+        <br />
+        <button id="btn">Start</button>
+        <button id="btn1">Stop</button>
+      </div>
+    </div>
+
+    <script>
+      const stopNum = document.querySelector("p");
+      const btn = document.querySelector("#btn");
+      const stopInterval = document.querySelector("#btn1");
+      let timeRef;
+      let num = 0;
+
+      const showMyNum = () => {
+        stopNum.innerHTML = "Loading...";
+
+        timeRef = setInterval(() => {
+          stopNum.innerHTML = `${num}`;
+          num++;
+        }, 1000);
+      };
+
+      btn.addEventListener("click", showMyNum);
+
+      stopInterval.addEventListener("click", () => {
+        clearInterval(timeRef);
+      });
+    </script>
+  </body>
+</html>
